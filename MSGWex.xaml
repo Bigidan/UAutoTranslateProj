@@ -1,0 +1,53 @@
+﻿<Window x:Class="UAutoTranslate.MSGWex"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UAutoTranslate"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterOwner"
+        Title="MessagesWindow" Height="210.87" Width="370.788" WindowStyle="None">
+    <Border CornerRadius="10">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8ABAE2" Offset="0"/>
+                <GradientStop Color="#FF8ABAE2" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" MouseDown="RowDefinition_MouseDown"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <!--<StackPanel Margin="0 5 0 0" Height="30" Background="#100E17" MouseDown="RowDefinition_MouseDown">
+
+                </StackPanel>-->
+            <TextBlock Text="Точно?"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="22"
+                       MouseDown="RowDefinition_MouseDown"
+                       x:Name="gg"/>
+            <TextBlock Text="1"
+                       Grid.Row="1"
+                       Margin="15"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontSize="15"
+                       MouseDown="RowDefinition_MouseDown"
+                       TextWrapping="Wrap"
+                       x:Name="txtNeedMS" FontWeight="Bold"/>
+            <Button Margin="0,0,0,0" Height="29" Width="60" Grid.Row="2" HorizontalAlignment="Center" Click="btnCancel_Click">
+                <TextBlock Text="ОК" FontSize="20" FontFamily="Trebuchet MS"/>
+            </Button>
+
+        </Grid>
+    </Border>
+</Window>
+

@@ -1,0 +1,78 @@
+﻿<Window x:Class="UAutoTranslate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:UAutoTranslate"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Title="MainWindow" Height="500" Width="900" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" Icon="Images/Main_style_flag.png">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#FFF56A28" Offset="1"/>
+                <GradientStop Color="#FF00ADFF" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="440" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#100E17" MouseDown="Border_MouseDown"></Border>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="360">
+                <Image Source="Images/Main_style_flag.png" VerticalAlignment="Top" Margin="30 0 30 0" Width="320" RenderTransformOrigin="0.5,0.5" x:Name="ingDon" MouseDown="ingDon_MouseDown" Cursor="Hand">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="10"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock Margin="30" TextWrapping="Wrap" Foreground="#fb9463" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontFamily="Trebuchet MS"
+                           Text="Ця програма призначена для автоматичного перекладу застосунків та ігор. Автор (я) перекладає все сам, тому не всі переклади з'являється зразу." x:Name="MainHelpText" Visibility="Hidden"/>
+                <TextBlock Margin="30 0 30 30" TextWrapping="Wrap" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontFamily="Trebuchet MS"
+                           Text="Післямова: Вікно можна перетягувати за праву крайню сторону" x:Name="Main2HelpText" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Width="400">
+                <StackPanel Margin="20 40 20 0">
+                    <TextBlock Text="Auto to UA" Margin="20" Foreground="White" TextAlignment="Center" FontSize="30" FontFamily="Trebuchet MS" TextDecorations="{x:Null}" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="GamepadVariant" Margin="0 20" Width="25" Height="25" Foreground="White"/>
+                        <ComboBox Cursor="Hand" x:Name="cmbGame" IsEditable="False" Margin="10 20" materialDesign:HintAssist.Hint="Виберіть програму або гру" Foreground="Gray" Width="290" Height="30" FontFamily="Trebuchet MS" FontSize="15" ToolTip="Виберіть застосунок">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="10 40" HorizontalAlignment="Center">
+                        <Button Width="130" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="0" BorderBrush="#D94448" Background="#D94448"
+                                Foreground="White" ToolTip="Застосувати" x:Name="btnAccept" Content="Застосувати" Click="btnAccept_Click">
+                        </Button>
+                        <TextBlock Margin="10,10,10,0"  Text="Ця кнопка перекладає вибраний вами застосунок" Foreground="White" Height="19" x:Name="AcceptBtnText" Visibility="Hidden"/>
+
+                        <Button Margin="10" Width="150" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonAssist.CornerRadius="15" BorderThickness="0"
+                                Foreground="White" ToolTip="Скасувати зміни" x:Name="btnComeback" Content="Скасувати зміни" Click="btnComeback_Click">
+                        </Button>
+                        <TextBlock TextWrapping="Wrap" Margin="10,0"  Text="Ця кнопка відновлює початкові мовні налаштування застосунку котрий ви вибрали" Foreground="White" Height="39" x:Name="CamebackBtnText" Visibility="Hidden"/>
+
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontFamily="Trebuchet MS"
+                           Text="Післямова-2: Ще раз натисніть на знак питання" x:Name="Main3HelpText" Visibility="Hidden"/>
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" FontFamily="Trebuchet MS"
+                           Text="" x:Name="index" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Width="140">
+                <Button Margin="53,10,30,10" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                        ToolTip="Закрити" x:Name="btnClose" Click="btnClose_Click">
+                    <materialDesign:PackIcon Kind="Close" Foreground="White" Width="30" Height="30"/>
+                </Button>
+                <Button Margin="53,10,30,10" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                        ToolTip="Підказки/допомога" x:Name="btnHelp" Click="btnHelp_Click" Cursor="Help">
+                    <materialDesign:PackIcon Kind="Help" Foreground="White" Width="30" Height="30"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
